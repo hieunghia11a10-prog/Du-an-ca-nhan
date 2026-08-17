@@ -200,4 +200,110 @@ Ngoài 3 nhóm người dùng chính, CAB System còn cần tích hợp với c�
 | Notification Provider | Gửi thông báo đến khách hàng và tài xế |
 | Map / Location Provider | Hỗ trợ vị trí, bản đồ và khoảng cách |
 
+# Bước 2: Các bên liên quan trong hệ thống
+
+## 2.1. Danh sách các bên liên quan
+
+Stakeholder là các cá nhân, nhóm hoặc tổ chức có ảnh hưởng đến hệ thống CAB System hoặc bị ảnh hưởng bởi hệ thống.
+
+| Stakeholder | Vai trò |
+|---|---|
+| Khách hàng | Sử dụng dịch vụ đặt xe, tạo yêu cầu đặt xe, theo dõi chuyến, thanh toán và đánh giá tài xế |
+| Tài xế | Nhận và thực hiện chuyến xe, cập nhật trạng thái và vị trí |
+| Nhân viên vận hành | Quản lý khách hàng, tài xế, phương tiện, chuyến đi và xử lý sự cố |
+| Ban giám đốc | Đưa ra định hướng, theo dõi doanh thu, số lượng chuyến và hiệu quả hoạt động |
+| Business Analyst | Thu thập, phân tích và làm rõ yêu cầu nghiệp vụ |
+| Development Team | Phân tích kỹ thuật, xây dựng và triển khai hệ thống |
+| QA / Tester | Kiểm thử chức năng, hiệu năng, bảo mật và chất lượng hệ thống |
+| Payment Provider | Cung cấp dịch vụ thanh toán điện tử |
+| Notification Provider | Cung cấp dịch vụ gửi thông báo |
+| Map / Location Provider | Cung cấp dữ liệu bản đồ, vị trí và khoảng cách |
+
+---
+
+## 2.2. Phân loại Stakeholder
+
+Các Stakeholder được phân loại dựa trên hai yếu tố:
+
+- **Power:** Mức độ quyền lực hoặc khả năng ảnh hưởng đến dự án.
+- **Interest:** Mức độ quan tâm đến dự án và kết quả của hệ thống.
+
+### Các nhóm Stakeholder
+
+| Nhóm | Power | Interest | Cách quản lý |
+|---|---|---|---|
+| Ban giám đốc | Cao | Cao | Quản lý chặt chẽ |
+| Nhân viên vận hành | Cao | Cao | Quản lý chặt chẽ |
+| Khách hàng | Thấp | Cao | Giữ hài lòng |
+| Tài xế | Thấp | Cao | Giữ hài lòng |
+| Business Analyst | Trung bình | Cao | Phối hợp chặt chẽ |
+| Development Team | Trung bình | Cao | Phối hợp chặt chẽ |
+| QA / Tester | Trung bình | Cao | Phối hợp chặt chẽ |
+| Payment Provider | Trung bình | Trung bình | Theo dõi |
+| Notification Provider | Trung bình | Thấp | Theo dõi |
+| Map / Location Provider | Trung bình | Thấp | Theo dõi |
+
+---
+
+## 2.3. Stakeholder Matrix
+
+Stakeholder Matrix được xây dựng dựa trên mô hình **Power / Interest Matrix**.
+
+### 4 nhóm chính
+
+#### 1. Power cao – Interest cao
+
+Cần quản lý chặt chẽ và thường xuyên trao đổi.
+
+- Ban giám đốc
+- Nhân viên vận hành
+
+#### 2. Power thấp – Interest cao
+
+Cần giữ hài lòng và thu thập phản hồi thường xuyên.
+
+- Khách hàng
+- Tài xế
+
+#### 3. Power cao – Interest thấp
+
+Cần duy trì sự hài lòng và cung cấp thông tin phù hợp.
+
+- Trong phạm vi hiện tại chưa xác định rõ Stakeholder thuộc nhóm này.
+
+#### 4. Power thấp – Interest thấp
+
+Chỉ cần theo dõi và cập nhật thông tin khi cần thiết.
+
+- Notification Provider
+- Map / Location Provider
+
+---
+
+## 2.4. Stakeholder Power / Interest Matrix bằng Mermaid
+
+```mermaid
+quadrantChart
+    title Stakeholder Power / Interest Matrix
+    x-axis Interest thấp --> Interest cao
+    y-axis Power thấp --> Power cao
+
+    quadrant-1 Quản lý chặt chẽ
+    quadrant-2 Giữ hài lòng
+    quadrant-3 Theo dõi
+    quadrant-4 Duy trì
+
+    Ban giám đốc: [0.85, 0.95]
+    Nhân viên vận hành: [0.90, 0.80]
+
+    Khách hàng: [0.90, 0.25]
+    Tài xế: [0.85, 0.30]
+
+    Business Analyst: [0.90, 0.55]
+    Development Team: [0.85, 0.50]
+    QA Tester: [0.80, 0.45]
+
+    Payment Provider: [0.50, 0.50]
+    Notification Provider: [0.30, 0.30]
+    Map Location Provider: [0.35, 0.35]
 
