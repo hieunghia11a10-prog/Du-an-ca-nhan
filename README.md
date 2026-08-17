@@ -15,7 +15,7 @@ Hệ thống đặt xe hiện tại của Công ty ABC đang tồn tại một s
 
 #### 1.2. Khách hàng khó theo dõi chuyến đi
 
-- Khách hàng khó biết yêu cầu đặt xe đang ở trạng thái nào.
+- Khách hàng khó biết yêu cầu đặt xe đang ở trạng thái nào
 - Không dễ dàng biết tài xế nào đã nhận chuyến.
 - Khó theo dõi thời gian dự kiến tài xế đến.
 - Khó theo dõi trạng thái chuyến đi trong quá trình di chuyển.
@@ -307,3 +307,44 @@ quadrantChart
     Notification Provider: [0.30, 0.30]
     Map Location Provider: [0.35, 0.35]
 
+1. Khách hàng đăng nhập
+        ↓
+2. Nhập điểm đón và điểm đến
+        ↓
+3. Chọn loại xe
+        ↓
+4. Gửi yêu cầu đặt xe
+        ↓
+5. Hệ thống tiếp nhận yêu cầu
+        ↓
+6. Hệ thống tìm tài xế phù hợp
+        ↓
+7. Gửi yêu cầu đến tài xế
+        ↓
+8. Tài xế chấp nhận / từ chối
+        ↓
+   ┌────┴────┐
+   ↓         ↓
+Chấp nhận   Từ chối
+   ↓         ↓
+   ↓    Tìm tài xế khác
+   ↓         ↓
+   └────┬────┘
+        ↓
+9. Tài xế đến điểm đón
+        ↓
+10. Đón khách
+        ↓
+11. Thực hiện chuyến
+        ↓
+12. Hoàn thành chuyến
+        ↓
+13. Hệ thống tính cước
+        ↓
+14. Khách hàng thanh toán
+        ↓
+15. Hệ thống ghi nhận kết quả thanh toán
+        ↓
+16. Khách hàng đánh giá tài xế
+        ↓
+17. Lưu lịch sử chuyến đi
