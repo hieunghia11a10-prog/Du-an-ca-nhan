@@ -373,24 +373,28 @@ flowchart TD
 | 12 | Báo cáo | Nhân viên vận hành / Ban giám đốc |
 
 
-4. Xác định Scope (phạm vi dự án).
-STT	Module	Mục đích
-1	Authentication & Authorization	Đăng nhập, xác thực và phân quyền
-2	Customer Management	Quản lý khách hàng
-3	Driver Management	Quản lý tài xế
-4	Vehicle Management	Quản lý phương tiện
-5	Booking Management	Quản lý yêu cầu đặt xe
-6	Driver Matching	Tìm và phân công tài xế
-7	Trip Management	Quản lý chuyến đi
-8	Location Management	Quản lý vị trí và dữ liệu địa điểm
-9	Fare Management	Tính và quản lý cước
-10	Payment Management	Quản lý thanh toán
-11	Notification Management	Quản lý và gửi thông báo
-12	Rating & Review	Đánh giá tài xế
-13	Operation Management	Quản lý vận hành
-14	Reporting	Báo cáo
-15	Audit Log	Lưu vết hoạt động
-16	External Integration	Tích hợp hệ thống bên ngoài
+## 4. Xác định Scope (Phạm vi dự án)
+
+Phạm vi dự án bao gồm các module chính phục vụ việc quản lý toàn bộ quy trình đặt xe, phân công tài xế, quản lý chuyến đi, thanh toán và vận hành hệ thống.
+
+| STT | Module | Mục đích |
+|---:|---|---|
+| 1 | **Authentication & Authorization** | Đăng nhập, xác thực người dùng và phân quyền truy cập hệ thống |
+| 2 | **Customer Management** | Quản lý thông tin và hồ sơ khách hàng |
+| 3 | **Driver Management** | Quản lý thông tin, hồ sơ và trạng thái hoạt động của tài xế |
+| 4 | **Vehicle Management** | Quản lý thông tin, tình trạng và dữ liệu phương tiện |
+| 5 | **Booking Management** | Quản lý yêu cầu đặt xe của khách hàng |
+| 6 | **Driver Matching** | Tìm kiếm, lựa chọn và phân công tài xế phù hợp cho chuyến đi |
+| 7 | **Trip Management** | Quản lý quá trình thực hiện và trạng thái chuyến đi |
+| 8 | **Location Management** | Quản lý vị trí, điểm đón, điểm trả và dữ liệu địa điểm |
+| 9 | **Fare Management** | Tính toán, áp dụng và quản lý cước phí chuyến đi |
+| 10 | **Payment Management** | Quản lý giao dịch và trạng thái thanh toán |
+| 11 | **Notification Management** | Quản lý và gửi thông báo đến khách hàng, tài xế và nhân viên |
+| 12 | **Rating & Review** | Cho phép khách hàng đánh giá và nhận xét về tài xế/chuyến đi |
+| 13 | **Operation Management** | Quản lý và giám sát hoạt động vận hành của hệ thống |
+| 14 | **Reporting** | Cung cấp các báo cáo và thống kê phục vụ quản lý, vận hành |
+| 15 | **Audit Log** | Lưu vết các hoạt động và thay đổi dữ liệu trong hệ thống |
+| 16 | **External Integration** | Tích hợp với các hệ thống và dịch vụ bên ngoài như bản đồ, thanh toán và thông báo |
 
    Priority 1 – Bắt buộc
 Authentication
