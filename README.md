@@ -307,45 +307,104 @@ quadrantChart
     Notification Provider: [0.30, 0.30]
     Map Location Provider: [0.35, 0.35]
 ```
-1. Khách hàng đăng nhập
-        ↓
-2. Nhập điểm đón và điểm đến
-        ↓
-3. Chọn loại xe
-        ↓
-4. Gửi yêu cầu đặt xe
-        ↓
-5. Hệ thống tiếp nhận yêu cầu
-        ↓
-6. Hệ thống tìm tài xế phù hợp
-        ↓
-7. Gửi yêu cầu đến tài xế
-        ↓
-8. Tài xế chấp nhận / từ chối
-        ↓
-   ┌────┴────┐
-   ↓         ↓
-Chấp nhận   Từ chối
-   ↓         ↓
-   ↓    Tìm tài xế khác
-   ↓         ↓
-   └────┬────┘
-        ↓
-9. Tài xế đến điểm đón
-        ↓
-10. Đón khách
-        ↓
-11. Thực hiện chuyến
-        ↓
-12. Hoàn thành chuyến
-        ↓
-13. Hệ thống tính cước
-        ↓
-14. Khách hàng thanh toán
-        ↓
-15. Hệ thống ghi nhận kết quả thanh toán
-        ↓
-16. Khách hàng đánh giá tài xế
-        ↓
-17. Lưu lịch sử chuyến đi
+## Business Order – Quy trình nghiệp vụ đặt xe
 
+```mermaid
+flowchart TD
+    A["Khách hàng đăng nhập"]
+    B["Nhập điểm đón và điểm đến"]
+    C["Chọn loại xe"]
+    D["Gửi yêu cầu đặt xe"]
+    E["Hệ thống tiếp nhận yêu cầu"]
+    F["Tìm tài xế phù hợp"]
+    G["Gửi yêu cầu đến tài xế"]
+    H{"Tài xế chấp nhận?"}
+    I["Tài xế đến điểm đón"]
+    J["Đón khách"]
+    K["Thực hiện chuyến"]
+    L["Hoàn thành chuyến"]
+    M["Tính cước"]
+    N["Thanh toán"]
+    O["Đánh giá tài xế"]
+    P["Lưu lịch sử chuyến"]
+    Q["Tìm tài xế khác"]
+    R["Thông báo không tìm được tài xế"]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    G --> H
+
+    H -->|Có| I
+    H -->|Không| Q
+    Q --> F
+
+    I --> J
+    J --> K
+    K --> L
+    L --> M
+    M --> N
+    N --> O
+    O --> P
+
+    F -->|Không tìm được tài xế| R
+
+```
+
+### Business Order nên chia thành các nghiệp vụ chính
+
+| STT | Business Order | Actor chính |
+|---:|---|---|
+| 1 | Đăng nhập | Khách hàng |
+| 2 | Tạo yêu cầu đặt xe | Khách hàng |
+| 3 | Tìm tài xế | CAB System |
+| 4 | Nhận / từ chối chuyến | Tài xế |
+| 5 | Phân công tài xế | CAB System |
+| 6 | Thực hiện chuyến | Tài xế |
+| 7 | Tính cước | CAB System |
+| 8 | Thanh toán | Khách hàng |
+| 9 | Gửi thông báo | CAB System |
+| 10 | Đánh giá tài xế | Khách hàng |
+| 11 | Quản lý chuyến | Nhân viên vận hành |
+| 12 | Báo cáo | Nhân viên vận hành / Ban giám đốc |
+
+
+4. Xác định Scope (phạm vi dự án).
+STT	Module	Mục đích
+1	Authentication & Authorization	Đăng nhập, xác thực và phân quyền
+2	Customer Management	Quản lý khách hàng
+3	Driver Management	Quản lý tài xế
+4	Vehicle Management	Quản lý phương tiện
+5	Booking Management	Quản lý yêu cầu đặt xe
+6	Driver Matching	Tìm và phân công tài xế
+7	Trip Management	Quản lý chuyến đi
+8	Location Management	Quản lý vị trí và dữ liệu địa điểm
+9	Fare Management	Tính và quản lý cước
+10	Payment Management	Quản lý thanh toán
+11	Notification Management	Quản lý và gửi thông báo
+12	Rating & Review	Đánh giá tài xế
+13	Operation Management	Quản lý vận hành
+14	Reporting	Báo cáo
+15	Audit Log	Lưu vết hoạt động
+16	External Integration	Tích hợp hệ thống bên ngoài
+
+   Priority 1 – Bắt buộc
+Authentication
+Customer Management
+Driver Management
+Vehicle Management
+Booking
+Driver Matching
+Trip Management
+Fare
+Payment
+Notification
+Priority 2 – Quan trọng
+Operation Management
+Rating & Review
+Location Management
+Reporting
+Audit Log
