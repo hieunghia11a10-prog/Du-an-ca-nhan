@@ -433,10 +433,68 @@ Audit Log
 | BR-13 | Xử lý và thông báo kết quả thanh toán |
 | BR-14 | Xem lịch sử chuyến đi và giao dịch |
 | BR-15 | Đánh giá tài xế sau chuyến |
-
 | BR-16 | Nhân viên vận hành quản lý khách hàng, tài xế và phương tiện |
 | BR-17 | Nhân viên vận hành theo dõi và xử lý chuyến đang diễn ra |
 | BR-18 | Phân quyền và bảo vệ dữ liệu |
 | BR-19 | Cung cấp báo cáo cơ bản về chuyến đi và doanh thu |
 | BR-20 | Hệ thống có khả năng mở rộng và tích hợp dịch vụ bên ngoài |
 
+# Functional Requirements – Tìm và phân công tài xế
+
+## FR-01. Xác định vị trí khách hàng
+
+- Hệ thống phải xác định vị trí điểm đón của khách hàng.
+- Hệ thống phải xác định điểm đến của chuyến đi.
+- Hệ thống sử dụng thông tin vị trí để tìm tài xế phù hợp.
+
+## FR-02. Xác định tài xế sẵn sàng
+
+- Hệ thống chỉ tìm kiếm các tài xế đang ở trạng thái `Available`.
+- Không đưa tài xế đang bận vào danh sách tìm kiếm.
+- Không đưa tài xế đang offline vào danh sách tìm kiếm.
+
+## FR-03. Xác định loại xe
+
+- Hệ thống phải xác định loại xe khách hàng đã lựa chọn.
+- Chỉ đề xuất tài xế có phương tiện phù hợp với loại xe khách hàng yêu cầu.
+
+## FR-04. Xác định tài xế phù hợp
+
+Hệ thống phải lọc tài xế dựa trên:
+
+- Vị trí tài xế.
+- Khoảng cách đến điểm đón.
+- Trạng thái sẵn sàng.
+- Loại xe.
+- Tiêu chí đánh giá tài xế.
+
+## FR-05. Ưu tiên tài xế
+
+Hệ thống phải ưu tiên tài xế dựa trên các tiêu chí:
+
+1. Đang sẵn sàng.
+2. Phù hợp loại xe.
+3. Gần khách hàng.
+4. Có đánh giá tốt.
+
+> Thứ tự và trọng số cụ thể cần được xác nhận với khách hàng.
+
+## FR-06. Gửi yêu cầu nhận chuyến
+
+- Hệ thống gửi thông báo chuyến đến tài xế được chọn.
+- Hệ thống hiển thị thông tin cần thiết để tài xế quyết định nhận chuyến.
+- Hệ thống chờ tài xế xác nhận.
+
+## FR-07. Tài xế xác nhận chuyến
+
+Nếu tài xế chấp nhận:
+
+```text
+Tài xế chấp nhận
+        ↓
+Gán tài xế cho chuyến
+        ↓
+Thông báo cho khách hàng
+        ↓
+Bắt đầu theo dõi chuyến
+```
