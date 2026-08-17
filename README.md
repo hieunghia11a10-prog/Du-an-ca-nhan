@@ -1,127 +1,203 @@
-# CAB System – Bước 1: Tìm hiểu nghiệp vụ
+# CAB System – Phân tích nghiệp vụ
 
-## 1. Hệ thống hiện tại có những vấn đề gì?
+## Bước 1: Tìm hiểu nghiệp vụ
 
-Công ty ABC hiện đang cung cấp dịch vụ đặt xe thông qua tổng đài và một ứng dụng đơn giản. Tuy nhiên, hệ thống hiện tại còn tồn tại nhiều hạn chế:
+### 1. Vấn đề hệ thống
 
-### 1.1. Phân công tài xế thủ công
+Hệ thống đặt xe hiện tại của Công ty ABC đang tồn tại một số vấn đề chính:
 
-Việc phân công tài xế chủ yếu được thực hiện thủ công.
+#### 1.1. Phân công tài xế thủ công
 
-Điều này có thể dẫn đến:
+- Việc phân công tài xế chủ yếu được thực hiện thủ công.
+- Khó tìm được tài xế phù hợp và gần khách hàng.
+- Khi tài xế từ chối hoặc không phản hồi, việc tìm tài xế khác còn hạn chế.
+- Khó mở rộng khi số lượng khách hàng và tài xế tăng cao.
 
-- Mất nhiều thời gian để tìm tài xế.
-- Khó lựa chọn tài xế phù hợp và gần khách hàng.
-- Khó xử lý khi tài xế từ chối hoặc không phản hồi.
-- Khó mở rộng khi số lượng khách hàng và tài xế tăng.
+#### 1.2. Khách hàng khó theo dõi chuyến đi
 
-### 1.2. Khách hàng khó theo dõi chuyến đi
+- Khách hàng khó biết yêu cầu đặt xe đang ở trạng thái nào.
+- Không dễ dàng biết tài xế nào đã nhận chuyến.
+- Khó theo dõi thời gian dự kiến tài xế đến.
+- Khó theo dõi trạng thái chuyến đi trong quá trình di chuyển.
 
-Khách hàng chưa có đầy đủ thông tin về trạng thái chuyến đi.
+#### 1.3. Quản lý thanh toán chưa tập trung
 
-Khách hàng cần biết:
+- Thông tin thanh toán chưa được quản lý tập trung.
+- Chưa có cơ chế thống nhất để quản lý trạng thái thanh toán.
+- Cần hỗ trợ cả thanh toán tiền mặt và thanh toán điện tử.
+- Khi thanh toán điện tử thất bại cần có cơ chế xử lý lại.
 
-- Yêu cầu đặt xe đã được tiếp nhận hay chưa.
-- Hệ thống đang tìm tài xế hay chưa.
-- Tài xế nào đã nhận chuyến.
-- Tài xế đang ở đâu.
-- Thời gian dự kiến tài xế đến.
-- Chuyến đi đang ở trạng thái nào.
+#### 1.4. Khó khăn trong vận hành
 
-### 1.3. Thông tin thanh toán chưa được quản lý tập trung
+Bộ phận vận hành gặp khó khăn trong việc:
 
-Thông tin thanh toán chưa được quản lý tập trung trong một hệ thống.
-
-Do đó cần có cơ chế:
-
-- Tính cước chuyến đi.
-- Quản lý trạng thái thanh toán.
-- Hỗ trợ tiền mặt.
-- Hỗ trợ thanh toán điện tử.
-- Xử lý khi thanh toán điện tử thất bại.
+- Quản lý khách hàng.
+- Quản lý tài xế.
+- Quản lý phương tiện.
+- Theo dõi các chuyến đang diễn ra.
+- Kiểm tra trạng thái tài xế.
+- Xử lý các trường hợp chuyến bị lỗi.
 - Tra cứu lịch sử giao dịch.
+- Kiểm soát quyền của nhân viên.
 
-### 1.4. Khó khăn trong vận hành
+#### 1.5. Hệ thống khó mở rộng
 
-Bộ phận vận hành gặp khó khăn khi số lượng khách hàng và tài xế tăng.
+Hệ thống hiện tại chưa đáp ứng tốt nhu cầu phát triển lâu dài của doanh nghiệp:
 
-Các vấn đề bao gồm:
+- Khó phục vụ số lượng lớn khách hàng và tài xế.
+- Khó mở rộng thêm loại dịch vụ.
+- Khó thêm phương thức thanh toán.
+- Khó thêm các kênh thông báo mới.
+- Khó thay đổi hoặc tích hợp thêm các nhà cung cấp bên ngoài.
+- Một lỗi ở thanh toán hoặc thông báo có thể ảnh hưởng đến hoạt động của hệ thống.
 
-- Khó quản lý tài xế.
-- Khó quản lý phương tiện.
-- Khó theo dõi các chuyến đang diễn ra.
-- Khó xử lý các chuyến bị lỗi.
-- Khó tra cứu lịch sử giao dịch.
-- Khó kiểm soát quyền của từng nhân viên.
+#### 1.6. Một số nghiệp vụ chưa được xác định rõ
 
-### 1.5. Khả năng mở rộng còn hạn chế
+Doanh nghiệp hiện chưa thống nhất:
 
-Hệ thống hiện tại chưa đáp ứng tốt nhu cầu phát triển lâu dài.
+- Cách tính cước.
+- Tiêu chí ưu tiên tài xế.
+- Thời gian tài xế phải phản hồi.
+- Chính sách hủy chuyến.
+- Cách xử lý khi mất kết nối mạng.
+- Thời gian lưu trữ dữ liệu.
 
-Doanh nghiệp cần khả năng:
-
-- Phục vụ số lượng lớn khách hàng.
-- Phục vụ số lượng lớn tài xế.
-- Thêm loại dịch vụ mới.
-- Thêm phương thức thanh toán.
-- Thêm kênh thông báo.
-- Thay đổi nhà cung cấp dịch vụ bên ngoài.
-- Mở rộng từng thành phần của hệ thống độc lập.
-
-### 1.6. Thiếu khả năng tự động hóa
-
-Một số hoạt động quan trọng chưa được tự động hóa đầy đủ:
-
-- Tìm tài xế.
-- Phân công tài xế.
-- Theo dõi trạng thái chuyến.
-- Gửi thông báo.
-- Tính cước.
-- Xử lý thanh toán.
-- Báo cáo hoạt động.
+Các vấn đề này cần được Business Analyst làm rõ với các bên liên quan trước khi phát triển hệ thống.
 
 ---
 
-# 2. Mục tiêu của hệ thống mới
+## 2. Mục tiêu đem lại
 
-CAB System được xây dựng nhằm giải quyết các hạn chế của hệ thống hiện tại và tạo ra một nền tảng đặt xe có khả năng phát triển lâu dài.
+Hệ thống CAB System mới được xây dựng nhằm giải quyết các hạn chế của hệ thống hiện tại và tạo ra một nền tảng đặt xe có khả năng phát triển lâu dài.
 
-## 2.1. Mục tiêu kinh doanh
+### 2.1. Đối với khách hàng
 
-- Xây dựng nền tảng đặt xe trực tuyến hiện đại.
-- Giảm sự phụ thuộc vào việc phân công tài xế thủ công.
-- Nâng cao trải nghiệm của khách hàng.
-- Hỗ trợ nhân viên vận hành quản lý tập trung.
-- Nâng cao hiệu quả hoạt động của tài xế.
-- Có dữ liệu để theo dõi và đánh giá hoạt động kinh doanh.
-- Có khả năng phục vụ số lượng lớn khách hàng và tài xế.
-- Tạo nền tảng có khả năng mở rộng trong tương lai.
+Hệ thống giúp khách hàng:
 
-## 2.2. Mục tiêu hệ thống
+- Đăng ký và đăng nhập tài khoản.
+- Quản lý thông tin cá nhân.
+- Nhập điểm đón và điểm đến.
+- Lựa chọn loại xe.
+- Gửi yêu cầu đặt xe.
+- Theo dõi quá trình tìm tài xế.
+- Biết tài xế đã nhận chuyến.
+- Theo dõi thời gian dự kiến tài xế đến.
+- Theo dõi trạng thái chuyến đi.
+- Xem lịch sử chuyến đi.
+- Xem số tiền phải thanh toán.
+- Thanh toán bằng tiền mặt hoặc phương thức điện tử.
+- Đánh giá tài xế sau khi hoàn thành chuyến.
 
-Hệ thống mới cần hỗ trợ toàn bộ quy trình:
+### 2.2. Đối với tài xế
 
-```text
-Khách hàng đặt xe
-        ↓
-Tiếp nhận yêu cầu
-        ↓
-Tìm tài xế phù hợp
-        ↓
-Phân công tài xế
-        ↓
-Tài xế nhận chuyến
-        ↓
-Tài xế đến điểm đón
-        ↓
-Đón khách
-        ↓
-Thực hiện chuyến
-        ↓
-Hoàn thành chuyến
-        ↓
-Tính cước
-        ↓
-Thanh toán
-        ↓
-Đánh giá tài xế
+Hệ thống giúp tài xế:
+
+- Quản lý tài khoản và hồ sơ cá nhân.
+- Quản lý thông tin phương tiện.
+- Cập nhật trạng thái hoạt động.
+- Chuyển sang trạng thái sẵn sàng nhận chuyến.
+- Nhận thông báo khi có chuyến phù hợp.
+- Chấp nhận hoặc từ chối chuyến.
+- Cập nhật trạng thái chuyến đi.
+- Cập nhật vị trí hiện tại.
+- Hoàn thành chuyến.
+
+### 2.3. Đối với nhân viên vận hành
+
+Hệ thống giúp nhân viên vận hành:
+
+- Quản lý khách hàng.
+- Quản lý tài xế.
+- Quản lý phương tiện.
+- Theo dõi các chuyến đang diễn ra.
+- Kiểm tra trạng thái tài xế.
+- Hỗ trợ xử lý chuyến bị lỗi.
+- Tra cứu lịch sử giao dịch.
+- Phân quyền người dùng quản trị.
+- Theo dõi và quản lý hoạt động của hệ thống.
+
+### 2.4. Đối với doanh nghiệp
+
+Hệ thống giúp doanh nghiệp:
+
+- Tự động hóa quá trình tìm và phân công tài xế.
+- Nâng cao trải nghiệm khách hàng.
+- Nâng cao hiệu quả vận hành.
+- Quản lý tập trung dữ liệu.
+- Theo dõi doanh thu và số lượng chuyến.
+- Theo dõi tỷ lệ chuyến hoàn thành và hủy.
+- Đánh giá hiệu quả hoạt động của tài xế.
+- Đảm bảo hệ thống hoạt động ổn định khi tải tăng.
+- Có khả năng mở rộng hệ thống trong tương lai.
+- Có thể bổ sung dịch vụ, phương thức thanh toán và kênh thông báo mới.
+
+---
+
+## 3. Ai sử dụng hệ thống?
+
+Hệ thống CAB System có 3 nhóm người dùng chính:
+
+### 3.1. Khách hàng
+
+**Vai trò:** Người sử dụng dịch vụ đặt xe.
+
+**Chức năng chính:**
+
+- Đăng ký tài khoản.
+- Đăng nhập.
+- Quản lý thông tin cá nhân.
+- Đặt xe.
+- Theo dõi chuyến đi.
+- Thanh toán.
+- Xem lịch sử chuyến.
+- Đánh giá tài xế.
+
+---
+
+### 3.2. Tài xế
+
+**Vai trò:** Người nhận và thực hiện chuyến xe.
+
+**Chức năng chính:**
+
+- Quản lý hồ sơ.
+- Quản lý phương tiện.
+- Cập nhật trạng thái hoạt động.
+- Nhận thông báo chuyến.
+- Chấp nhận chuyến.
+- Từ chối chuyến.
+- Cập nhật trạng thái chuyến.
+- Cập nhật vị trí.
+- Hoàn thành chuyến.
+
+---
+
+### 3.3. Nhân viên vận hành
+
+**Vai trò:** Người quản lý và hỗ trợ hoạt động của hệ thống.
+
+**Chức năng chính:**
+
+- Quản lý khách hàng.
+- Quản lý tài xế.
+- Quản lý phương tiện.
+- Theo dõi chuyến đi.
+- Kiểm tra trạng thái tài xế.
+- Xử lý các chuyến bị lỗi.
+- Tra cứu giao dịch.
+- Quản lý quyền truy cập.
+- Theo dõi báo cáo.
+
+---
+
+## 4. Các hệ thống bên ngoài
+
+Ngoài 3 nhóm người dùng chính, CAB System còn cần tích hợp với các hệ thống bên ngoài:
+
+| Hệ thống | Vai trò |
+|---|---|
+| Payment Provider | Xử lý thanh toán điện tử |
+| Notification Provider | Gửi thông báo đến khách hàng và tài xế |
+| Map / Location Provider | Hỗ trợ vị trí, bản đồ và khoảng cách |
+
+
