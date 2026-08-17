@@ -5,7 +5,7 @@
 
 ### 1. Vấn đề hệ thống
 
-Hệ thống đặt xe hiện tại của Công ty ABC đang tồn tại một số vấn đề chính:
+Hệ thống đặt xe hiện tại của Công ty CAB đang tồn tại một số vấn đề chính:
 
 #### 1.1. Phân công tài xế thủ công
 
