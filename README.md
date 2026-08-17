@@ -1,3 +1,4 @@
+# 23670421
 # CAB System – Phân tích nghiệp vụ
 
 ## Bước 1: Tìm hiểu nghiệp vụ
@@ -408,3 +409,34 @@ Rating & Review
 Location Management
 Reporting
 Audit Log
+
+5.# Chuyển yêu cầu thành Business Requirement
+
+# Chuyển yêu cầu thành Business Requirement
+
+## 1. Business Requirements – MVP 7 tuần
+
+| ID | Business Requirement |
+|---|---|
+| BR-01 | Đăng ký, đăng nhập và quản lý tài khoản |
+| BR-02 | Nhập điểm đi và điểm đến |
+| BR-03 | Chọn loại xe và tạo yêu cầu đặt xe |
+| BR-04 | Tự động tìm tài xế phù hợp và gần khách hàng |
+| BR-05 | Tài xế nhận hoặc từ chối chuyến |
+| BR-06 | Tự động tìm tài xế khác khi tài xế từ chối hoặc không phản hồi |
+| BR-07 | Theo dõi trạng thái chuyến đi |
+| BR-08 | Theo dõi vị trí và thời gian dự kiến tài xế đến |
+| BR-09 | Tài xế cập nhật trạng thái chuyến |
+| BR-10 | Thông báo cho khách hàng và tài xế |
+| BR-11 | Tính cước chuyến đi |
+| BR-12 | Thanh toán tiền mặt hoặc thanh toán điện tử |
+| BR-13 | Xử lý và thông báo kết quả thanh toán |
+| BR-14 | Xem lịch sử chuyến đi và giao dịch |
+| BR-15 | Đánh giá tài xế sau chuyến |
+
+| BR-16 | Nhân viên vận hành quản lý khách hàng, tài xế và phương tiện |
+| BR-17 | Nhân viên vận hành theo dõi và xử lý chuyến đang diễn ra |
+| BR-18 | Phân quyền và bảo vệ dữ liệu |
+| BR-19 | Cung cấp báo cáo cơ bản về chuyến đi và doanh thu |
+| BR-20 | Hệ thống có khả năng mở rộng và tích hợp dịch vụ bên ngoài |
+
