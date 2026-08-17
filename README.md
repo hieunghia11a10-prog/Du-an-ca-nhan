@@ -306,7 +306,7 @@ quadrantChart
     Payment Provider: [0.50, 0.50]
     Notification Provider: [0.30, 0.30]
     Map Location Provider: [0.35, 0.35]
-
+```
 1. Khách hàng đăng nhập
         ↓
 2. Nhập điểm đón và điểm đến
@@ -348,3 +348,4 @@ Chấp nhận   Từ chối
 16. Khách hàng đánh giá tài xế
         ↓
 17. Lưu lịch sử chuyến đi
+
